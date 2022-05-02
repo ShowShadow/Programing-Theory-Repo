@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class TextHandler : MonoBehaviour
 {
-    Text informationText;
+    public Text informationText;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,6 @@ public class TextHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             OnClick(); //ABSTRACTION
-           
         }
     }
 
@@ -43,6 +43,7 @@ public class TextHandler : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             hit.collider.gameObject.transform.Rotate(0, 10, 0, Space.World);
